@@ -12,6 +12,7 @@ const connectDB = require('./db.js');
 // IMPORT ROUTE FILES
 // AUTHENTICATION
 const auth = require('./routes/auth');
+const jobs = require('./routes/jobs');
 
 // CONFIGURATIONS
 dotenv.config({
@@ -30,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // MOUNTIN ROURES
 app.use('/api/v1/auth', auth);
+app.use('/api/v1/jobs', jobs);
 
 const PORT = process.env.PORT || 8080;
 const server = app.listen(PORT, () =>
